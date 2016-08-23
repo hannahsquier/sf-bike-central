@@ -37,25 +37,24 @@ class UsersController < ApplicationController
   #   @profile = User.find(params[:id]).profile
   # end
 
-  # def edit
-  #   @user = User.find(params[:id])
-  #   @profile = @user.profile
-  # end
+  def edit
+    @user = User.find(params[:id])
+  end
 
-  # def update
-  #   @user = User.find(params[:id])
+  def update
+    @user = User.find(params[:id])
 
-  #   if @user.update(user_params)
-  #     flash[:success] = "You successfully updated your profile."
-  #     redirect_to user_path(current_user.id)
+    if @user.update(user_params)
+      flash[:success] = "You successfully updated your profile."
+      redirect_to root_path
 
-  #   else
-  #     errors = @user.errors.full_messages.join(", ")
-  #     flash[:sorry] = "We could not update your profile. #{errors}"
-  #     render :edit
-  #   end
+    else
+      errors = @user.errors.full_messages.join(", ")
+      flash[:sorry] = "We could not update your profile. #{errors}"
+      render :edit
+    end
 
-  # end
+  end
 
 
   private

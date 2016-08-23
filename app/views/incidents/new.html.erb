@@ -1,12 +1,12 @@
 
+<h1>Report a New Incident</h1>
+<%= form_for @incident, html: { class: "col-xs-3" } do |f| %>
 
-<%= form_for @incident do |f| %>
-
-	<%= f.label :location %>
-	<%= f.text_field :location %>
+	<%= f.label :location, 'Location, e.g. "Fell and Market", "Dolores Park"' %>
+	<%= f.text_field :location, class: "form-control" %>
 
 	<%= f.label :description %>
-	<%= f.text_area :description %>
+	<%= f.text_area :description , class: "form-control"%>
 
-	<%= f.submit %>
+	<%= f.submit  class: "btn btn-success" %>
 <% end %>
