@@ -1,0 +1,31 @@
+
+<div class="jumbotron">
+<h1>Welcome to San Francisco Bike Central!</h1>
+<p>A platform to report bike related incidents</p>
+</div>
+
+<div class= "row">
+	<div class= "col-xs-8">
+		<% @map_urls.each do |neighborhood, url| %>
+  		<h1><%= neighborhood %></h1>
+  		<img src=<%= url %>>
+  	<% end %>
+	</div>	
+
+	<div class= "col-xs-3"> 
+		<h2>Legend</h2>
+		<%= image_tag "red-pin.png" , class: "pin"%> Incidents
+		<%= image_tag "blue-pin.png", class: "pin" %> Bike Share
+
+	<div class= "well">
+
+	<h1>Incidents:</h1>
+		<%= link_to "Report New Incident", new_incident_path, class: "btn btn-danger" %>
+		<% @incidents.each do |incident| %>
+  		<h3>Incident #<%= incident.id %> <%= incident.location.titleize %></h3>
+  		<h5>by: <%= incident.user.username %></h5>
+  		<p><%= incident.description %></p>
+  	<% end %>
+	</div>	
+	</div>
+</div>
