@@ -13,8 +13,7 @@ class Map
 	def get_map_urls
 		map_urls = {}
 		NEIGHBORHOODS.each do |neighborhood|
-			map_urls[neighborhood] = "https://maps.googleapis.com/maps/api/staticmap?center=#{urlify(neighborhood)},San+Francisco,CA&zoom=15&size=600x600&scale=2&maptype=#{get_terrain}&#{add_incident_markers}#{add_bike_share_markers_to_url if @bikeshare && BS_NEIGHBORHOODS[neighborhood]}
-&key=#{Rails.application.secrets.gmaps_static_api_key}"
+			map_urls[neighborhood] = "https://maps.googleapis.com/maps/api/staticmap?center=#{urlify(neighborhood)},San+Francisco,CA&zoom=15&size=600x600&scale=2&maptype=#{get_terrain}&#{add_incident_markers}#{add_bike_share_markers_to_url if @bikeshare && BS_NEIGHBORHOODS[neighborhood]}&key=#{Rails.application.secrets.gmaps_static_api_key}"
 			end
 			map_urls
 	end
