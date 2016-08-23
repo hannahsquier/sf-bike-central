@@ -1,6 +1,6 @@
 # 🚴[San Francisco Bike Central](https://boiling-thicket-67912.herokuapp.com/)
 
-## A Platform for bay are bikers to report bike related incidents
+## A platform for Bay Area bikers to report bike related incidents
 
 
 Instructions:
@@ -13,4 +13,4 @@ Instructions:
 
 * Toggle terrain and bike share (heads up: bike share data takes a bit to load)
 
-Enjoy
+Enjoy!
