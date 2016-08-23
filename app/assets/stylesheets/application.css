@@ -21,3 +21,18 @@
 .danger {
 	color: red;
 }
+
+.jumbotron h1 {
+	display: inline-block;
+}
+
+.jumbotron img {
+	display: inline-block;
+	width: 200px;
+	margin-left: 30px;
+margin-bottom: 30px;
+}
+
+.jumbotron p {
+	display: inline-block;
+}

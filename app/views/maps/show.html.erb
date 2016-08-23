@@ -1,7 +1,8 @@
 
 <div class="jumbotron">
-<h1>Welcome to San Francisco Bike Central!</h1>
-<p>A platform to report bike related incidents</p>
+	<h1>Welcome to San Francisco Bike Central! </h1>
+	<%= image_tag "bike.png" %>
+	<p>A platform to report bike related incidents</p>
 </div>
 
 <div class= "row">
@@ -13,49 +14,8 @@
 	</div>	
 
 	<div class= "col-xs-3"> 
-		<div class="well">
-
-			<h2>Legend</h2>
-			<%= image_tag "red-pin.png" , class: "pin"%> Incidents
-			<%= image_tag "blue-pin.png", class: "pin" %> Bike Share
-		</div>
-			
-		<div class="well">
-		<h2>Options</h2>
-
-		<%= form_tag "/", method: "get" do  %>
-				<%= label_tag :terrain, "Terrain" %>
-				<%= check_box_tag :terrain, true, terrain? %>
-
-
-			<%= label_tag :bikeshare, "Bikeshare"%>
-
-			<%= check_box_tag :bikeshare, true, bikeshare? %>
-			<%= submit_tag "Reload", class: "btn btn-info" %>
-		<% end %>
-	</div>
-<br>
-	<div class= "well">
-
-	<h1>Incidents</h1>
-		<% if current_user %>
-			<%= link_to "Report New Incident", new_incident_path, class: "btn btn-danger" %>
-		<% else %>
-			<h3 class="danger">Please sign in to report an incident.</h3>
-		<% end %>
-
-		<% @incidents.each do |incident| %>
-  		<h3>Incident #<%= incident.id %> <%= incident.location.titleize %></h3>
-  		<h5>by: <%= incident.user.username %></h5>
-  		<p><%= incident.description %></p>
-  		
-  		<% if current_user && incident.user_id == current_user.id %>
-  			<%= link_to "Delete", incident_path(incident.id), method: :delete %>
-  			<%= link_to "Edit", edit_incident_path(incident.id) %>
-
-  		<% end %>
-  	<% end %>
-
-	</div>	
+		<%= render "legend" %>
+		<%= render "options" %>
+		<%= render "incidents" %>
 	</div>
 </div>

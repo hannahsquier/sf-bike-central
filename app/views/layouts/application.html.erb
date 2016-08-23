@@ -18,18 +18,22 @@
   </head>
   <nav class="navbar navbar-default">
   <% unless current_user %>
-  <ul class="nav navbar-nav">
-  <li>
- 	 	<%= link_to "New User", new_user_path %>
- 	 		</li>
- 	 	</ul>
+	 
+ 	 	
+	  <ul class="nav navbar-nav">
+	  	<li><%= link_to "New User", new_user_path %></li>
+	 	</ul>
+ 	 	
  	 	<%= render "shared/login_form" %>
-   <% else%>
-   	 <ul class="nav navbar-nav navbar-right">
-	   <li>	<%= link_to "Logout", logout_path %></li>
-	   	<li><%= link_to "Edit Account Info", edit_user_path(current_user.id) %></li>
-		</ul>
-
+   	<% else%>
+	   
+			<ul class="nav navbar-nav navbar-left">
+		  	<li><a href="#">Hi <%= current_user.username %>!</a></li>
+			</ul>
+	   	 <ul class="nav navbar-nav navbar-right">
+		   <li>	<%= link_to "Logout", logout_path %></li>
+		   	<li><%= link_to "Edit Account Info", edit_user_path(current_user.id) %></li>
+			</ul>
 
    <% end %>
  		

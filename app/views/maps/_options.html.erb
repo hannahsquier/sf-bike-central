@@ -1,0 +1,14 @@
+<div class="well">
+		<h2>Options</h2>
+
+		<%= form_tag "/", method: "get" do  %>
+				<%= label_tag :terrain, "Terrain" %>
+				<%= check_box_tag :terrain, true, terrain? %>
+
+
+			<%= label_tag :bikeshare, "Bikeshare"%>
+
+			<%= check_box_tag :bikeshare, true, bikeshare? %>
+			<%= submit_tag "Reload", class: "btn btn-info" %>
+		<% end %>
+	</div>

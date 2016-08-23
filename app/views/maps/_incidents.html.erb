@@ -1,0 +1,22 @@
+<div class= "well">
+
+	<h1>Incidents</h1>
+		<% if current_user %>
+			<%= link_to "Report New Incident", new_incident_path, class: "btn btn-danger" %>
+		<% else %>
+			<h3 class="danger">Please sign in to report an incident.</h3>
+		<% end %>
+
+		<% @incidents.each do |incident| %>
+  		<h3>Incident #<%= incident.id %> <%= incident.location.titleize %></h3>
+  		<h5>by: <%= incident.user.username %></h5>
+  		<p><%= incident.description %></p>
+  		
+  		<% if current_user && incident.user_id == current_user.id %>
+  			<%= link_to "Delete", incident_path(incident.id), method: :delete %>
+  			<%= link_to "Edit", edit_incident_path(incident.id) %>
+
+  		<% end %>
+  	<% end %>
+
+	</div>	
