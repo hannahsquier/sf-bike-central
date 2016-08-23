@@ -31,6 +31,8 @@ class IncidentsController < ApplicationController
 
    def update
 			@incident = Incident.find(params[:id])
+			@incident.get_coords_from_location
+
 
 			if @incident.update(incident_params)
 				redirect_to root_path
