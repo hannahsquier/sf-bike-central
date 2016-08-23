@@ -1,24 +1,16 @@
-# README
+# 🚴[San Francisco Bike Central](https://boiling-thicket-67912.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## A Platform for bay are bikers to report bike related incidents
 
-Things you may want to cover:
 
-* Ruby version
+Instructions:
 
-* System dependencies
+* Go to the [San Francisco Bike Central Homepage](https://boiling-thicket-67912.herokuapp.com/)
 
-* Configuration
+* View other biker's incidents
 
-* Database creation
+* Create your own account to post your own incidents
 
-* Database initialization
+* Toggle terrain and bike share (heads up: bike share data takes a bit to load)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy
