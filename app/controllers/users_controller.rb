@@ -66,10 +66,5 @@ class UsersController < ApplicationController
   end
 
 
-  def user_is_current_user?
-    unless params[:id].to_i == current_user.id
-      flash[:error] = "Not authorized!"
-      redirect_to user_posts_path(current_user.id)
-    end
-  end
+
 end

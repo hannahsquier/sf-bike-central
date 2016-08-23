@@ -29,8 +29,13 @@
   </nav>
   <body data-no-turbolinks class="container-fluid">
   	<% flash.each do |type, message| %>
-  		<%= type.titleize %>! <%= message %>
-  	<% end %>
+  		<% if type == :error %>
+  			<div class="alert alert-danger"><%= type.titleize %>! <%= message %></div>
+  		<% else %>
+  			<div class="alert alert-success"><%= type.titleize %>! <%= message %></div>
+  		<% end %>
+ 	<% end %>
+
 
     <%= yield %>
   </body>

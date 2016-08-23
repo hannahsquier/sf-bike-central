@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
 	def show
-		@map_urls = Map.new.get_map_urls
+		@map_urls = Map.new(terrain: params[:terrain], bikeshare: params[:bikeshare]).get_map_urls
 		@incidents = Incident.all
 	end
 end
