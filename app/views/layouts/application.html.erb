@@ -16,12 +16,19 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
-  <nav>
+  <nav class="navbar navbar-default">
   <% unless current_user %>
+  <ul class="nav navbar-nav">
+  <li>
  	 	<%= link_to "New User", new_user_path %>
+ 	 		</li>
+ 	 	</ul>
  	 	<%= render "shared/login_form" %>
    <% else%>
-   	<%= link_to "Logout", logout_path %>
+   	 <ul class="nav navbar-nav navbar-right">
+	   <li>	<%= link_to "Logout", logout_path %></li>
+	   	<li><%= link_to "Edit Account Info", edit_user_path(current_user.id) %></li>
+		</ul>
 
 
    <% end %>
@@ -29,11 +36,13 @@
   </nav>
   <body data-no-turbolinks class="container-fluid">
   	<% flash.each do |type, message| %>
-  		<% if type == :error %>
+  		<% if type == "error" %>
   			<div class="alert alert-danger"><%= type.titleize %>! <%= message %></div>
   		<% else %>
   			<div class="alert alert-success"><%= type.titleize %>! <%= message %></div>
   		<% end %>
+
+
  	<% end %>
 
 
