@@ -13,6 +13,9 @@ Instructions:
 
 * Toggle terrain and bike share (heads up: bike share data takes a bit to load)
 
+
+## Screenshots
+
 ![Screenshot](screenshot.png)
 
 Enjoy!
